@@ -1,0 +1,9 @@
+<div class="search-wrapper">
+
+</div>
+<mat-grid-list cols="5" rowHeight="170px" class="grid-list">
+  <mat-grid-tile
+      *ngFor="let note of listNotes">
+      <li>{{ note.title }}</li>
+  </mat-grid-tile>
+</mat-grid-list>

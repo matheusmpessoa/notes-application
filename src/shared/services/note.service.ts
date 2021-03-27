@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Note } from '../interfaces/note';
 
 @Injectable({ providedIn: 'root' })
 export class NoteService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor( ) { }
 
+  public getListOfNotes() {
+    const listOfNotes = JSON.parse(localStorage.getItem('notes') || '{}');
+    return listOfNotes;
+  }
+
+  public createNote(note: Note) {
+    let listOfNotes = JSON.parse(localStorage.getItem('notes') || '{}');
+    const newListOfNotes = [...listOfNotes, note];
+    listOfNotes = localStorage.setItem('notes',  JSON.stringify(newListOfNotes));
+  }
 }

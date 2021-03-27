@@ -1,1 +1,30 @@
-<h1>create</h1>
+<mat-card class="note-create-wrapper">
+  <form [formGroup]="createNotesForm" (ngSubmit)="onSubmit()">
+    <h3>Create a note</h3>
+
+    <mat-card-content>
+      <mat-form-field class="form-field">
+        <input 
+          matInput
+          placeholder="Note title"
+          formControlName="title"
+          id="title"
+          name="noteTitle"
+        >
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <textarea 
+          matInput
+          placeholder="Note description"
+          formControlName="description"
+          id="description"
+          name="noteDescription"
+        ></textarea>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions class="edit-actions">
+      <button type="submit" mat-raised-button color="primary">Create</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

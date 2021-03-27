@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/shared/modules/material/material.module';
 import { NoteCreateModule } from './pages/notes.module';
 
@@ -21,6 +21,7 @@ import { HeaderComponent } from '../shared/components/header/header.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     NoteCreateModule
   ],

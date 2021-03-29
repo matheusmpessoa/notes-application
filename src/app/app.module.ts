@@ -9,11 +9,13 @@ import { MaterialModule } from 'src/shared/modules/material/material.module';
 import { NoteCreateModule } from './pages/notes.module';
 
 import { HeaderComponent } from '../shared/components/header/header.component';
+import { SearchNotePipe } from '../shared/utils/search-note.pipe';
 
 @NgModule({
   declarations: [	
     AppComponent,
     HeaderComponent,
+    SearchNotePipe
    ],
   imports: [
     BrowserModule,

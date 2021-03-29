@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../../shared/modules/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { NotesComponent } from './notes/notes.component';
+import { NoteComponent } from './note/note.component';
+import { NotesPanelComponent } from './notes-panel/notes-panel.component';
 import { NoteCreateComponent } from './note-create/note-create.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
 
 @NgModule({
   declarations: [
-    NotesComponent,
+    NoteComponent,
+    NotesPanelComponent,
     NoteCreateComponent,
     NotesListComponent
   ],
@@ -22,7 +24,8 @@ import { NotesListComponent } from './notes-list/notes-list.component';
     ReactiveFormsModule
   ],
   exports: [
-    NotesComponent,
+    NoteComponent,
+    NotesPanelComponent,
     NoteCreateComponent,
     NotesListComponent
   ]

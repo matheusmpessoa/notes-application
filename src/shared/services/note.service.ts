@@ -17,4 +17,13 @@ export class NoteService {
     const newListOfNotes = [...listOfNotes, note];
     listOfNotes = localStorage.setItem('notes',  JSON.stringify(newListOfNotes));
   }
+
+  public updateNote(note: Note) {
+
+  }
+
+  public deleteNote(note: Note | number) {
+    let listOfNotes = JSON.parse(localStorage.getItem('notes') || '{}');
+    console.log(listOfNotes);
+  }
 }

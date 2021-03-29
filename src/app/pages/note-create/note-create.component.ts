@@ -12,7 +12,8 @@ export class NoteCreateComponent implements OnInit {
 
   @Output() addedNote = new EventEmitter();
 
-  public createNotesForm!: FormGroup;
+  // public createNotesForm!: FormGroup;
+  public createNotesForm: any;
   public submittedNotesForm: boolean = false;
 
   constructor(
@@ -29,8 +30,7 @@ export class NoteCreateComponent implements OnInit {
     this.createNotesForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(140)]],
       description: ['', [Validators.required]],
-      isDone: [false],
-      isArchived: [false],
+      statusArchived: [false]
     });
   }
 
@@ -44,8 +44,7 @@ export class NoteCreateComponent implements OnInit {
       id: 1,
       title: this.createNotesForm.value.title,
       description: this.createNotesForm.value.description,
-      isDone: false,
-      isArchived: false,
+      statusArchived: false
     }
     this.noteService.createNote(newNote);
   }

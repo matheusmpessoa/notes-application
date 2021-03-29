@@ -1,9 +1,11 @@
-<div class="search-wrapper">
-
-</div>
+<div class="search-wrapper"></div>
 <mat-grid-list cols="5" rowHeight="170px" class="grid-list">
   <mat-grid-tile
-      *ngFor="let note of listNotes">
-      <li>{{ note.title }}</li>
+      *ngFor="let note of listNotes; let i = index">
+      <note 
+        [note]="note"
+        [noteChange]="noteChange"
+        [deleteNote]="deleteNote"
+      ></note>
   </mat-grid-tile>
 </mat-grid-list>
